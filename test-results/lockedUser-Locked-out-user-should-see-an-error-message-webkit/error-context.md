@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: first.spec.ts >> Verify SauceDemo title and URL
-- Location: tests/first.spec.ts:3:5
+- Name: lockedUser.spec.ts >> Locked out user should see an error message
+- Location: tests/lockedUser.spec.ts:3:5
 
 # Error details
 
