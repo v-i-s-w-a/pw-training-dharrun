@@ -6,12 +6,14 @@ export class CartPage extends BasePage {
     super(page);
   }
 
-  async open() {
+  async open(): Promise<void> {
     await this.goto('/cart.html');
   }
 
   async itemNames(): Promise<string[]> {
-    return await this.page.locator('.cart_item .inventory_item_name').allTextContents();
+    return await this.page
+      .locator('.cart_item .inventory_item_name')
+      .allTextContents();
   }
 
   async removeItem(productName: string): Promise<void> {
