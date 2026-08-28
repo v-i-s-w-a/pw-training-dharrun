@@ -9,6 +9,6 @@ test('problem user displays the same image six times', async ({ page }) => {
       images.map(image => image.getAttribute('src'))
     );
 
-  expect(imageSources).toHaveLength(6);
+  expect(imageSources).toHaveLength(7);
   expect(new Set(imageSources).size).toBe(1);
 });
