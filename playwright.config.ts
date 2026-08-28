@@ -60,20 +60,24 @@ export default defineConfig({
   },
 
   {
-    name: 'firefox',
-    use: {
-      ...devices['Desktop Firefox'],
-    },
-    testIgnore: /problem-user\.spec\.ts/,
+  name: 'firefox',
+  use: {
+    ...devices['Desktop Firefox'],
+    storageState: '.auth/standard.json',
   },
+  dependencies: ['setup'],
+  testIgnore: /problem-user\.spec\.ts/,
+},
 
-  {
-    name: 'webkit',
-    use: {
-      ...devices['Desktop Safari'],
-    },
-    testIgnore: /problem-user\.spec\.ts/,
+{
+  name: 'webkit',
+  use: {
+    ...devices['Desktop Safari'],
+    storageState: '.auth/standard.json',
   },
+  dependencies: ['setup'],
+  testIgnore: /problem-user\.spec\.ts/,
+},
 ],
   /* Run your local dev server before starting the tests */
   // webServer: {
