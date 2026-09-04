@@ -3,7 +3,7 @@ import { BasePage } from './BasePage';
 
 export class InventoryPage extends BasePage {
   constructor(page: Page) {
-    super(page);
+    super(page, '/inventory.html');
   }
 
   async addItem(productName: string): Promise<void> {

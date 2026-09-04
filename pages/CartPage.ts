@@ -3,16 +3,20 @@ import { BasePage } from './BasePage';
 
 export class CartPage extends BasePage {
   constructor(page: Page) {
-    super(page);
-  }
-
-  async open(): Promise<void> {
-    await this.goto('/cart.html');
+    super(page, '/cart.html');
   }
 
   async itemNames(): Promise<string[]> {
     return await this.page
       .locator('.cart_item .inventory_item_name')
       .allTextContents();
+  }
+
+  async removeItem(productName: string): Promise<void> {
+    const cartItem = this.page.locator('.cart_item').filter({
+      hasText: productName,
+    });
+
+    await cartItem.getByRole('button', { name: 'Remove' }).click();
   }
 }
